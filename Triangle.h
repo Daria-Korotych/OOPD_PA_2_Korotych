@@ -5,6 +5,6 @@ class Triangle : public Figure{
 private:
     int height;
 public:
-    Triangle() : height() {}
+    Triangle(const int& x, const int& y, const int& height) : Figure(x, y), height(height) {}
     void draw(vector<vector<char>> &grid) override;
 };

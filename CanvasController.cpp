@@ -1,8 +1,10 @@
 #include "CanvasController.h"
 #include <vector>
+#include <iostream>
 
 #include "Figure.h"
 #include "Storage.h"
+#include "Triangle.h"
 
 using namespace std;
 
@@ -18,5 +20,12 @@ void CanvasController::clearGrid(vector<vector<char>> &grid) {
         for (int j = 0; j < grid[0].size(); j++) {
             grid[i][j] = ' ';
         }
+    }
+}
+
+void CanvasController::addFigure(const string &figure, const vector<int>& parameters) {
+    if (figure == "triangle") {
+        auto triangle = new Triangle(parameters[0], parameters[1], parameters[2]);
+        Storage::addFigure(triangle);
     }
 }

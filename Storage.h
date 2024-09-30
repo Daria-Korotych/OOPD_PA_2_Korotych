@@ -9,6 +9,8 @@ class Storage {
 private:
     static vector<Figure*> figures;
 public:
+    Storage() = default;
     static vector<Figure*> getFigures();
+    static void addFigure(Figure* figure);
 };
 

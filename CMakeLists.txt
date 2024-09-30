@@ -13,4 +13,6 @@ add_executable(OOPD_PA_2_Korotych main.cpp
         Storage.cpp
         Storage.h
         Triangle.cpp
-        Triangle.h)
+        Triangle.h
+        CLI.cpp
+        CLI.h)
