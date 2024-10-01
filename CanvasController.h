@@ -10,5 +10,6 @@ public:
     static void clearGrid(vector<vector<char>> &grid);
 
     static void addFigure(const string &figure, const vector<int>& parameters);
+    static void listFigures();
 };
 

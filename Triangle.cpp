@@ -3,6 +3,9 @@
 //
 
 #include "Triangle.h"
+#include <iostream>
+
+using namespace std;
 
 void Triangle::draw(vector<vector<char>> &grid) {
     int board_height = static_cast<int>(grid.size());
@@ -28,4 +31,8 @@ void Triangle::draw(vector<vector<char>> &grid) {
         if (baseX >= 0 && baseX < board_width && baseY < board_height)
              grid[baseY][baseX] = '*';
     }
+}
+
+void Triangle::list() {
+    printf("triangle:\nx: %d, y: %d, height: %d, id: %d\n", x, y, height, id);
 }

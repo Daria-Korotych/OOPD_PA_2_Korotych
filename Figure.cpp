@@ -3,3 +3,8 @@
 //
 
 #include "Figure.h"
+int counter = 0;
+
+int Figure::setID() {
+    return ++counter;
+}

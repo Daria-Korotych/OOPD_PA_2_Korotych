@@ -4,6 +4,6 @@
 class CLI {
 public:
     static void addFigure();
-    static void printFigure(Board board);
+    static void directCommand();
 };
 

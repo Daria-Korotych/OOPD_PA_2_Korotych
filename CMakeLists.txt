@@ -15,4 +15,6 @@ add_executable(OOPD_PA_2_Korotych main.cpp
         Triangle.cpp
         Triangle.h
         CLI.cpp
-        CLI.h)
+        CLI.h
+        Square.cpp
+        Square.h)

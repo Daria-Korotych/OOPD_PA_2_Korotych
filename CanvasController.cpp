@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Figure.h"
+#include "Square.h"
 #include "Storage.h"
 #include "Triangle.h"
 
@@ -27,5 +28,16 @@ void CanvasController::addFigure(const string &figure, const vector<int>& parame
     if (figure == "triangle") {
         auto triangle = new Triangle(parameters[0], parameters[1], parameters[2]);
         Storage::addFigure(triangle);
+    }
+    else if (figure == "square") {
+        auto square = new Square(parameters[0], parameters[1], parameters[2]);
+        Storage::addFigure(square);
+    }
+}
+
+void CanvasController::listFigures() {
+    vector<Figure*> figures = Storage::getFigures();
+    for (const auto& figure : figures) {
+        figure->list();
     }
 }
