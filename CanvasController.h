@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "Figure.h"
+
 using namespace std;
 
 class CanvasController {
@@ -11,5 +13,7 @@ public:
 
     static void addFigure(const string &figure, const vector<int>& parameters);
     static void listFigures();
+    static void removeFigures();
+    static void undo();
 };
 

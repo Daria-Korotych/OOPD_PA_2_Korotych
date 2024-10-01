@@ -40,15 +40,13 @@ void CLI::directCommand() {
     while (command != "exit") {
         cout << "Enter your command:" << endl;
         cin >> command;
-        if (command == "add") {
-            CLI::addFigure();
-        }
+        if (command == "add") { addFigure(); }
         else if (command == "draw") {
             Board board;
             board.print();
         }
-        else if (command == "list") {
-            CanvasController::listFigures();
-        }
+        else if (command == "list") { CanvasController::listFigures(); }
+        else if (command == "clear") { CanvasController::removeFigures(); }
+        else if (command == "undo") { CanvasController::undo(); }
     }
 }

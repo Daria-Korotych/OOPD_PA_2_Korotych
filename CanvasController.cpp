@@ -25,6 +25,7 @@ void CanvasController::clearGrid(vector<vector<char>> &grid) {
 }
 
 void CanvasController::addFigure(const string &figure, const vector<int>& parameters) {
+    Storage::saveState();
     if (figure == "triangle") {
         auto triangle = new Triangle(parameters[0], parameters[1], parameters[2]);
         Storage::addFigure(triangle);
@@ -40,4 +41,15 @@ void CanvasController::listFigures() {
     for (const auto& figure : figures) {
         figure->list();
     }
+}
+
+void CanvasController::removeFigures() {
+    Storage::saveState();
+    Storage::removeFigures();
+    cout << "There is an empty board! All figures are deleted" << endl;
+}
+
+void CanvasController::undo() {
+    Storage::loadState();
+    cout << "Undo!" << endl;
 }
