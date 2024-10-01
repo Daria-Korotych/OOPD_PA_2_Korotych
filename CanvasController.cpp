@@ -2,7 +2,9 @@
 #include <vector>
 #include <iostream>
 
+#include "Circle.h"
 #include "Figure.h"
+#include "Rectangle.h"
 #include "Square.h"
 #include "Storage.h"
 #include "Triangle.h"
@@ -33,6 +35,14 @@ void CanvasController::addFigure(const string &figure, const vector<int>& parame
     else if (figure == "square") {
         auto square = new Square(parameters[0], parameters[1], parameters[2]);
         Storage::addFigure(square);
+    }
+    else if (figure == "circle") {
+        auto circle = new Circle(parameters[0], parameters[1], parameters[2]);
+        Storage::addFigure(circle);
+    }
+    else if (figure == "rectangle") {
+        auto rectangle = new Rectangle(parameters[0], parameters[1], parameters[2], parameters[3]);
+        Storage::addFigure(rectangle);
     }
 }
 

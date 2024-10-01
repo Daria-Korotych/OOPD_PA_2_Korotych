@@ -17,4 +17,8 @@ add_executable(OOPD_PA_2_Korotych main.cpp
         CLI.cpp
         CLI.h
         Square.cpp
-        Square.h)
+        Square.h
+        Circle.cpp
+        Circle.h
+        Rectangle.cpp
+        Rectangle.h)

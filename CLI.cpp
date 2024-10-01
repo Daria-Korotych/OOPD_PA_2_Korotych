@@ -23,11 +23,25 @@ void CLI::addFigure() {
             cin >> height;
             CanvasController::addFigure("triangle", {x, y, height});
             break;
+        case 2:
+            int radius;
+            printf("Enter the radius:");
+            cin >> radius;
+            CanvasController::addFigure("circle", {x, y, radius});
+            break;
         case 3:
             int side;
             printf("Enter the side:");
             cin >> side;
             CanvasController::addFigure("square", {x, y, side});
+            break;
+        case 4:
+            int width;
+            printf("Enter the width:");
+            cin >> width;
+            printf("Enter the height:");
+            cin >> height;
+            CanvasController::addFigure("rectangle", {x, y, width, height});
             break;
         default:
             printf("Enter valid input");
