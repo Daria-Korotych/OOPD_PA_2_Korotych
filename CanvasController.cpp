@@ -131,7 +131,7 @@ void CanvasController::load() {
         else if (shape == "square") {
             int x, y, side, id;
             iss >> x >> y >> side >> id;
-            Storage::addFigure(new Circle(x, y, side, id));
+            Storage::addFigure(new Square(x, y, side, id));
         }
         else if (shape == "rectangle") {
             int x, y, width, height, id;
