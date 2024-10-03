@@ -10,6 +10,7 @@ using namespace std;
 
 vector<Figure*> Storage::figures;
 vector<Figure*> Storage::state;
+bool Storage::stateAvailable = false;
 
 vector<Figure*> Storage::getFigures() {
     return figures;
@@ -25,12 +26,14 @@ void Storage::removeFigures() {
 
 void Storage::saveState() {
     state = figures;
+    stateAvailable = true;
 }
 
 void Storage::loadState() {
-    if (!state.empty()) {
+    if (stateAvailable == true) {
         figures = state;
         state.clear();
+        stateAvailable = false;
     }
     else {
         cout << "No figures found for ";

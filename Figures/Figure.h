@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -14,8 +15,10 @@ public:
 
     virtual void draw(vector<vector<char>> &grid) = 0;
     virtual void list() = 0;
+    virtual string save () = 0;
 
-    int setID();
+    int getID();
+    void setID(int id);
 
     virtual ~Figure() = default;
 };

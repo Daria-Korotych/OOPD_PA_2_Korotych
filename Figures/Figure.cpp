@@ -5,6 +5,10 @@
 #include "Figure.h"
 int counter = 0;
 
-int Figure::setID() {
+int Figure::getID() {
     return ++counter;
+}
+
+void Figure::setID(int id) {
+    counter = id;
 }

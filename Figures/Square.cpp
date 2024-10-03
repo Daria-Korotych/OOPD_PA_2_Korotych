@@ -3,6 +3,8 @@
 //
 
 #include "Square.h"
+
+#include <format>
 #include <iostream>
 
 using namespace std;
@@ -16,20 +18,24 @@ void Square::draw(vector<vector<char>> &grid) {
     for (int i = 0; i <side; i++) {
         int xPos = x + i;
         int yPos = y + i;
-        //left side
-        if (xPos < board_height && y < board_width) { grid[xPos][y] = '*'; }
+
+        if (xPos < board_width && y < board_height) { grid[y][xPos] = '*'; }
 
         //bottom side
-        if (x < board_height && yPos < board_width) { grid[x][yPos] = '*'; }
+        if (x < board_width && yPos < board_height) { grid[yPos][x] = '*'; }
 
         //law side
-        if (x + side - 1 < board_height && yPos < board_width) { grid[x + side -1][yPos] = '*'; }
+        if (x + side - 1 < board_width && yPos < board_height) { grid[yPos][x + side - 1] = '*'; }
 
         //right side
-        if (xPos < board_height && y + side - 1 < board_width) { grid[xPos][y + side - 1] = '*'; }
+        if (xPos < board_width && y + side - 1 < board_height) { grid[y + side - 1][xPos] = '*'; }
     }
 }
 
 void Square::list() {
     printf("square:\nx: %d, y: %d, side: %d, id: %d\n", x, y, side, id);
+}
+
+string Square::save() {
+    return format("square {} {} {} {}", x, y, side, id);
 }

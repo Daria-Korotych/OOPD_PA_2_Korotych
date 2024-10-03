@@ -21,19 +21,19 @@ void CLI::addFigure() {
             int height;
             printf("Enter the height:");
             cin >> height;
-            CanvasController::addFigure("triangle", {x, y, height});
+            CanvasController::addFigure(1, {x, y, height});
             break;
         case 2:
             int radius;
             printf("Enter the radius:");
             cin >> radius;
-            CanvasController::addFigure("circle", {x, y, radius});
+            CanvasController::addFigure(2, {x, y, radius});
             break;
         case 3:
             int side;
             printf("Enter the side:");
             cin >> side;
-            CanvasController::addFigure("square", {x, y, side});
+            CanvasController::addFigure(3, {x, y, side});
             break;
         case 4:
             int width;
@@ -41,7 +41,7 @@ void CLI::addFigure() {
             cin >> width;
             printf("Enter the height:");
             cin >> height;
-            CanvasController::addFigure("rectangle", {x, y, width, height});
+            CanvasController::addFigure(4, {x, y, width, height});
             break;
         default:
             printf("Enter valid input");
@@ -62,5 +62,10 @@ void CLI::directCommand() {
         else if (command == "list") { CanvasController::listFigures(); }
         else if (command == "clear") { CanvasController::removeFigures(); }
         else if (command == "undo") { CanvasController::undo(); }
+        else if (command == "shapes") { CanvasController::shapes(); }
+        else if (command == "save") { CanvasController::save(); }
+        else if (command == "load") { CanvasController::load(); }
+        else if (command == "exit") { cout << "Bye!"; }
+        else{ cout << "Enter valid input( Try again!" << endl;}
     }
 }

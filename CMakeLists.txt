@@ -8,17 +8,17 @@ add_executable(OOPD_PA_2_Korotych main.cpp
         Board.h
         CanvasController.cpp
         CanvasController.h
-        Figure.cpp
-        Figure.h
+        Figures/Figure.cpp
+        Figures/Figure.h
         Storage.cpp
         Storage.h
-        Triangle.cpp
-        Triangle.h
+        Figures/Triangle.cpp
+        Figures/Triangle.h
         CLI.cpp
         CLI.h
-        Square.cpp
-        Square.h
-        Circle.cpp
-        Circle.h
-        Rectangle.cpp
-        Rectangle.h)
+        Figures/Square.cpp
+        Figures/Square.h
+        Figures/Circle.cpp
+        Figures/Circle.h
+        Figures/Rectangle.cpp
+        Figures/Rectangle.h)

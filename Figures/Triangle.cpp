@@ -3,6 +3,8 @@
 //
 
 #include "Triangle.h"
+
+#include <format>
 #include <iostream>
 
 using namespace std;
@@ -35,4 +37,8 @@ void Triangle::draw(vector<vector<char>> &grid) {
 
 void Triangle::list() {
     printf("triangle:\nx: %d, y: %d, height: %d, id: %d\n", x, y, height, id);
+}
+
+string Triangle::save() {
+    return format("triangle {} {} {} {}", x, y, height, id);
 }

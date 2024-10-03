@@ -3,6 +3,8 @@
 //
 
 #include "Circle.h"
+
+#include <format>
 #include <iostream>
 
 using namespace std;
@@ -28,4 +30,8 @@ void Circle::draw(vector<vector<char>> &grid) {
 
 void Circle::list() {
     printf("circle:\nx: %d, y: %d, radius: %d, id: %d\n", x, y, radius, id);
+}
+
+string Circle::save() {
+    return format("circle {} {} {} {}", x, y, radius, id);
 }

@@ -3,6 +3,8 @@
 //
 
 #include "Rectangle.h"
+
+#include <format>
 #include <iostream>
 
 using namespace std;
@@ -14,26 +16,30 @@ void Rectangle::draw(std::vector<vector<char>> &grid) {
     int board_width = static_cast<int>(grid[0].size());
 
     for (int i = 0; i <height; i++) {
-        int xPos = x + i;
+        int yPos = y + i;
 
         //left side
-        if (xPos < board_height && y < board_width) { grid[xPos][y] = '*'; }
+        if (yPos < board_height && x < board_width) { grid[yPos][x] = '*'; }
 
         //right side
-        if (xPos < board_height && y + width - 1 < board_width) { grid[xPos][y + width - 1] = '*'; }
+        if (yPos < board_height && x + width - 1 < board_width) { grid[yPos][x + width - 1] = '*'; }
     }
 
     for (int i = 0; i <width; i++) {
-        int yPos = y + i;
+        int xPos = x + i;
 
         //bottom side
-        if (x < board_height && yPos < board_width) { grid[x][yPos] = '*'; }
+        if (y < board_height && xPos < board_width) { grid[y][xPos] = '*'; }
 
         //law side
-        if (x + height - 1 < board_height && yPos < board_width) { grid[x + height -1][yPos] = '*'; }
+        if (y + height - 1 < board_height && xPos < board_width) { grid[y + height -1][xPos] = '*'; }
     }
 }
 
 void Rectangle::list() {
     printf("circle:\nx: %d, y: %d, width: %d, height: %d, id: %d\n", x, y, width, height, id);
+}
+
+string Rectangle::save() {
+    return format("rectangle {} {} {} {} {}", x, y, width, height, id);
 }
